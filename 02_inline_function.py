@@ -14,11 +14,6 @@ def more_than_five_late_deliveries(driver: Driver) -> bool:
     return driver.num_late_deliveries > 5
 
 
-def rating_refactored(driver : Driver) -> int:
-    return 1 if driver.num_late_deliveries > 5 else 2
-
-
-
 """
 NOTES:
 
@@ -30,6 +25,10 @@ recommended.
 However we don't want to inline functions that has many callers, this can
 be counterproductive.
 """
+
+
+def rating_refactored(driver: Driver) -> int:
+    return 1 if driver.num_late_deliveries > 5 else 2
 
 
 if __name__ == "__main__":
