@@ -3,7 +3,7 @@
 class Order:
 
     def __init__(self, item_price: float, quantity: int) -> None:
-        self.item_price =item_price
+        self.item_price = item_price
         self.quantity = quantity
 
 
@@ -13,8 +13,9 @@ def tax_from_order(order: Order, tax_threshold: float = 10.0, tax_percentage: fl
     return taxable_charge * tax_percentage / 100
 
 
-def base_price(item_price : float, quantity: int) -> float:
+def base_price(item_price: float, quantity: int) -> float:
     return item_price * quantity
+
 
 """
 When a group of functions operate closely together on a common body of data, there is an 
@@ -23,10 +24,11 @@ environment in which the methods are operating more explicit and lends itself to
 encapsulation frin clients
 """
 
+
 class OrderBetter:
 
     def __init__(self, item_price: float, quantity: int, tax_percentage: float = 15.0, tax_threshold: float = 10.0) -> None:
-        self.item_price =item_price
+        self.item_price = item_price
         self.quantity = quantity
         self.tax_percentage = tax_percentage
         self.tax_threshold = tax_threshold
