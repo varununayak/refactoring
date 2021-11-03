@@ -21,6 +21,13 @@ are affected by the changes.
 
 For e.g. if a client needs to access a delegate object in a server, and the delegate object requires some
 changes, both the server and the client will be affected if the delegate is called directly by the client
+
+Note: The opposite of this is called "remove middle man". There is price for adding methods that hide 
+the delegate, and after a point, the class that holds the delegate is almost like a "middle man",
+in which case perhaps it is better for the client to call the delegate class directly.
+
+It can be hard to figure out what the right amount of hiding is, fortunately with "hide delegate" 
+and "remove middle man" we can keep refactoring to maintain the balance given the stage of the code base.
 """
 
 
