@@ -45,6 +45,7 @@ its callers.
 
 PRICING_PLAN = {'per_unit': 100}
 
+
 def charge_unslid():
     deserves_discount = False
     pricing_plan = PRICING_PLAN
@@ -53,6 +54,7 @@ def charge_unslid():
     if order * charge_per_unit > 2000:
         deserves_discount = True
     return deserves_discount
+
 
 """
 Slide Statements
@@ -64,6 +66,7 @@ another refactoring, most commonly the extract function refactoring.
 
 """
 
+
 def charge_slid():
     pricing_plan = PRICING_PLAN
     charge_per_unit = pricing_plan['per_unit']
@@ -71,8 +74,7 @@ def charge_slid():
     deserves_discount = (order * charge_per_unit) > 2000
     return deserves_discount
 
+
 if __name__ == "__main__":
     print(f"Deserves Discount: {charge_unslid()}")
     print(f"Deserves Discount: {charge_slid()}")
-
-
