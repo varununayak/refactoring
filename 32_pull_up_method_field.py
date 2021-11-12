@@ -37,6 +37,9 @@ breeding grounds for massive bugs. When similar/identical methods exist in
 all subclasses, it is a clear indicator that the method can be extracted to the
 superclass. This can also be done for fields as well as common elements of
 special methods like the constructor of a class.
+
+The inverse of this i.e. pushing down fields or methods is also a refactoring technique
+that is employed when the methods fields in a superclass are ONLY used by ONE subclass.
 """
 
 
