@@ -31,6 +31,11 @@ However, if we find ourself writing many conditional statements based on
 the value of the type code field, it may be time to create individual
 subclasses to subsume this behavior. This also implies that we are
 replacing the conditionals with polymorphism - a useful refactoring technique.
+
+The inverse of this is removing subclasses and replacing them with fields.
+A subclass that does too little incurs a cost in understanding that is no longer
+worthwhile. When that time comes, it's best to remove the subclass, replacing it
+with a field on its superclass.
 """
 
 
