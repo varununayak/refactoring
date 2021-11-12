@@ -40,6 +40,11 @@ a "command object". Such an object is usually built around a single execution
 method. It offers greater flexibility for the control and expression of a function
 and can provide methods to build up parameters to support a richer lifecycle.
 We can also add customizations using inheritance and hooks.
+
+The command object comes at a cost of additional complexity, in which case
+we shouldn't do this refactoring (or do the opposite if we find a command
+object that is too complex to manage). The inverse helps us get rid of
+unnecessary statefulness.
 """
 
 
