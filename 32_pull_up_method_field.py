@@ -15,7 +15,7 @@ class Employee(Party):
         self.monthly_cost = monthly_cost
 
     @property
-    def annual_cost(self):
+    def annual_cost(self) -> float:
         return self.monthly_cost * 12
 
 
@@ -27,7 +27,7 @@ class Department(Party):
         self.monthly_cost = monthly_cost
 
     @property
-    def total_annual_cost(self):
+    def total_annual_cost(self) -> float:
         return self.monthly_cost * 12
 
 
@@ -49,7 +49,7 @@ class Party2:
         self.monthly_cost = monthly_cost
 
     @property
-    def annual_cost(self):
+    def annual_cost(self) -> float:
         return self.monthly_cost * 12
 
 
@@ -67,7 +67,7 @@ class Department2(Party2):
         self.group = group
 
     @property
-    def total_annual_cost(self):
+    def total_annual_cost(self) -> float:
         # For backwards compatibility
         print(f"** total_annual_cost will be depecrated soon. Please use annual_cost. **")
         return super().annual_cost

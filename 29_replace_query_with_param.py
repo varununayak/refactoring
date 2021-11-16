@@ -12,11 +12,11 @@ thermostat = Thermostat()
 
 class HeatingPlan:
 
-    def __init__(self, low, high) -> None:
+    def __init__(self, low: int, high: int) -> None:
         self.low = low
         self.high = high
 
-    def target_temperature(self):
+    def target_temperature(self) -> int:
         if thermostat.selected_temperature > self.high:
             return self.high
         elif thermostat.selected_temperature < self.low:
@@ -49,11 +49,11 @@ referential transparency.
 
 class HeatingPlanBetter:
 
-    def __init__(self, low, high) -> None:
+    def __init__(self, low: int, high: int) -> None:
         self.low = low
         self.high = high
 
-    def target_temperature(self, selected_temperature: float):
+    def target_temperature(self, selected_temperature: int):
         """
         Now, everytime target_temperature() is called it is guaranteed
         to give the same result for the same value of selected temperature
@@ -78,6 +78,7 @@ def control_temperature_refactored(plan: HeatingPlan):
 if __name__ == "__main__":
     plan = HeatingPlan(20, 30)
     print(f"Control Temperature Result: {control_temperature(plan)}")
+    
     plan = HeatingPlanBetter(20, 30)
     print(
         f"Control Temperature Result: {control_temperature_refactored(plan)}")

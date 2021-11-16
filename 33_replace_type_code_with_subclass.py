@@ -69,7 +69,7 @@ class Manager(Employee_):
         self.type = "manager"
 
 
-def make_employee_(name: str, type: type):
+def make_employee_(name: str, type: type) -> Employee:
     # TODO(vn): Replace strings with Enum, much less error prone :)
     if type == "engineer":
         return Engineer(name)
@@ -84,5 +84,6 @@ def make_employee_(name: str, type: type):
 if __name__ == "__main__":
     engineer = make_employee("Varun", type="engineer")
     print(f"Let's welcome our newest engineer -> {engineer}")
+
     engineer = make_employee_("Varun", type="engineer")
     print(f"Let's welcome our newest engineer -> {engineer}")

@@ -28,12 +28,13 @@ class TempRangeBetter:
         self.low = low
         self.high = high
 
-    def within_range(self, temp: float):
+    def within_range(self, temp: float) -> bool:
         return self.low <= temp <= self.high
 
 
 if __name__ == "__main__":
     tr = TempRange(0, 100)
     print(f"Within Range: {is_within_range(5, tr.low, tr.high)}")
+
     tr = TempRangeBetter(0, 100)
     print(f"Within Range: {tr.within_range(5)}")

@@ -1,6 +1,5 @@
 # Parametrize Function
 
-from typing import Match
 import math
 
 
@@ -46,4 +45,5 @@ def base_charge_refactored(usage: float) -> float:
 
 if __name__ == "__main__":
     print(f"Base Charge: ${base_charge(80)}")
+
     print(f"Base Charge: ${base_charge_refactored(80)}")

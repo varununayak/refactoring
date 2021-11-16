@@ -9,7 +9,7 @@ class Scenario:
         self.delay = delay
 
 
-def distance_travelled(scenario: Scenario, time: float):
+def distance_travelled(scenario: Scenario, time: float) -> float:
     """ A mass experiences a primary force and after a delay, a secondary force in addition to it.
      Compute distance travelled in given time"""
     distance = 0
@@ -33,7 +33,7 @@ value it ultimately takes during its usage.
 """
 
 
-def distance_travelled_refactored(scenario: Scenario, time: float):
+def distance_travelled_refactored(scenario: Scenario, time: float) -> float:
     """ A mass experiences a primary force and after a delay, a secondary force in addition to it.
      Compute distance travelled in given time"""
     primary_acceleration = scenario.primary_force / scenario.mass
@@ -52,5 +52,6 @@ def distance_travelled_refactored(scenario: Scenario, time: float):
 if __name__ == "__main__":
     print(
         f"Distance Travelled: {distance_travelled(Scenario(10, 20, 1, 4), 10)}")
+
     print(
         f"Distance Travelled: {distance_travelled_refactored(Scenario(10, 20, 1, 4), 10)}")

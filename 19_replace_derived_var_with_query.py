@@ -16,7 +16,7 @@ class ProductionPlan:
         self._adjustments: List[Adjustment] = []
 
     @property
-    def production(self):
+    def production(self) -> float:
         return self._production
 
     def apply_adjustment(self, adjustment: Adjustment):
@@ -44,7 +44,7 @@ class ProductionPlanBetter:
         self._adjustments: List[Adjustment] = []
 
     @property
-    def production(self):
+    def production(self) -> float:
         return self._base_production + sum([adj.amount for adj in self._adjustments])
 
     def apply_adjustment(self, adjustment: Adjustment):
@@ -55,6 +55,7 @@ if __name__ == "__main__":
     pp = ProductionPlan(10)
     pp.apply_adjustment(Adjustment(5))
     print(f"Production: {pp.production}")
+
     ppb = ProductionPlanBetter(10)
     ppb.apply_adjustment(Adjustment(5))
     print(f"Production: {ppb.production}")

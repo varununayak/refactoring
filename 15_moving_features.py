@@ -41,12 +41,12 @@ its callers.
 
 """
 
-#############################################################################################
+######################################### Sliding ################################################
 
 PRICING_PLAN = {'per_unit': 100}
 
 
-def charge_unslid():
+def charge_unslid() -> bool:
     deserves_discount = False
     pricing_plan = PRICING_PLAN
     order = 40
@@ -63,11 +63,10 @@ Code is easier to understand when things that are related to each other appear t
 case is when all variables are declated on top of the function. It is generally better to declare
 the variables just before they are used. Sliding statements can also be a preparatory step for
 another refactoring, most commonly the extract function refactoring.
-
 """
 
 
-def charge_slid():
+def charge_slid() -> bool:
     pricing_plan = PRICING_PLAN
     charge_per_unit = pricing_plan['per_unit']
     order = 40

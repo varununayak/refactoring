@@ -27,4 +27,5 @@ def calculate_discounted_price_assert(original_price: float, discount_rate: floa
 
 if __name__ == "__main__":
     print(f"Discounted price: {calculate_discounted_price(100, 0.2)}")
+    
     print(f"Discounted price: {calculate_discounted_price_assert(100, 0.2)}")

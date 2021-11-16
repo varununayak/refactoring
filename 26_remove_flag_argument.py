@@ -7,7 +7,7 @@ class Rectangle:
         self.height = height
         self.width = width
 
-    def get_dim(self, dim_name: str):
+    def get_dim(self, dim_name: str) -> float:
         if dim_name == "perimeter":
             return 2 * (self.height + self.width)
         elif dim_name == "area":
@@ -17,7 +17,7 @@ class Rectangle:
 
 
 """
-A  flag argument is an argument that the caller uses to indicate which
+A flag argument is an argument that the caller uses to indicate which
 logic the called function should execute.
 
 Flag arguments complicate the process of understanding what function
@@ -36,16 +36,17 @@ class RectangleMuchBetter:
         self.width = width
 
     @property
-    def perimeter(self):
+    def perimeter(self) -> float:
         return 2 * (self.width + self.height)
 
     @property
-    def area(self):
+    def area(self) -> float:
         return self.width * self.height
 
 
 if __name__ == "__main__":
     r1 = Rectangle(10, 20)
     print(f"Area: {r1.get_dim('area')}. Perimeter: {r1.get_dim('perimeter')}")
+    
     r2 = RectangleMuchBetter(10, 20)
     print(f"Area: {r2.area}. Perimeter: {r2.perimeter}")

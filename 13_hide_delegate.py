@@ -22,7 +22,7 @@ are affected by the changes.
 For e.g. if a client needs to access a delegate object in a server, and the delegate object requires some
 changes, both the server and the client will be affected if the delegate is called directly by the client
 
-Note: The opposite of this is called "remove middle man". There is price for adding methods that hide 
+Note: The opposite of this is called "remove middle man". There is a price for adding methods that hide 
 the delegate, and after a point, the class that holds the delegate is almost like a "middle man",
 in which case perhaps it is better for the client to call the delegate class directly.
 
@@ -50,7 +50,9 @@ class Person2:
 
 
 if __name__ == "__main__":
+    # Client code 1
     p1 = Person("Varun", "Akshay", 1234)
     print(f"Person {p1.name} manager: {p1.department.manager}")
+    # Client code 2
     p2 = Person2("Varun", "Akshay", 1234)
     print(f"Person {p2.name} manager: {p2.manager}")

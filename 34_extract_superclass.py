@@ -10,11 +10,11 @@ class Employee:
         self._monthly_cost = monthly_cost
 
     @property
-    def monthly_cost(self):
+    def monthly_cost(self) -> float:
         return self._monthly_cost
 
     @property
-    def annual_cost(self):
+    def annual_cost(self) -> float:
         return 12 * self.monthly_cost
 
 
@@ -25,11 +25,11 @@ class Department:
         self._monthly_costs = monthly_costs
 
     @property
-    def monthly_cost(self):
+    def monthly_cost(self) -> float:
         return sum(self._monthly_costs)
 
     @property
-    def annual_cost(self):
+    def annual_cost(self) -> float:
         return 12 * self.monthly_cost
 
 
@@ -50,11 +50,11 @@ class Party:
         self._name = name
 
     @property
-    def monthly_cost(self):
+    def monthly_cost(self) -> float:
         raise NotImplementedError
 
     @property
-    def annual_cost(self):
+    def annual_cost(self) -> float:
         return 12 * self.monthly_cost
 
 
@@ -66,7 +66,7 @@ class Employee_(Party):
         self._monthly_cost = monthly_cost
 
     @property
-    def monthly_cost(self):
+    def monthly_cost(self) -> float:
         return self._monthly_cost
 
 
@@ -77,7 +77,7 @@ class Department_(Party):
         self._monthly_costs = monthly_costs
 
     @property
-    def monthly_cost(self):
+    def monthly_cost(self) -> float:
         return sum(self._monthly_costs)
 
 

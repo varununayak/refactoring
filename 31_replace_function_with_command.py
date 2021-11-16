@@ -14,7 +14,7 @@ class Candidate:
         self.exercises = exercises
 
 
-def score(medical_exam, candidate):
+def score(medical_exam: MedicalExam, candidate: Candidate) -> float:
     result = 0
     health_level = 100
     high_medical_risk_flag = False
@@ -50,13 +50,13 @@ unnecessary statefulness.
 
 class Scorer:
 
-    def __init__(self, candidate, medical_exam) -> None:
+    def __init__(self, candidate: Candidate, medical_exam: MedicalExam) -> None:
         self.candidate = candidate
         self.medical_exam = medical_exam
         self.health_level = 100
         self.high_medical_risk_flag = False
 
-    def score(self):
+    def score(self) -> float:
 
         self._account_for_smoking()
         self._account_for_exercise()
@@ -81,5 +81,6 @@ if __name__ == "__main__":
     candidate = Candidate("Varun", exercises=True)
     medical_exam = MedicalExam(is_smoker=False)
     print(f"Score: {score(medical_exam, candidate)}")
+
     scorer = Scorer(candidate, medical_exam)
     print(f"Score: {scorer.score()}")

@@ -1,8 +1,5 @@
 # Replace Conditional with Polymorphism
 
-from typing import List
-
-
 class Bird:
 
     def __init__(self, name: str, type: str) -> None:
@@ -10,7 +7,7 @@ class Bird:
         self.type = type
 
 
-def airspeed(bird: Bird):
+def airspeed(bird: Bird) -> float:
     if bird.type == "AfricanSwallow":
         return 10
     elif bird.type == "BlueParrot":
@@ -36,21 +33,21 @@ class BirdBase:
         self.name = name
 
     @property
-    def airspeed(self):
+    def airspeed(self) -> float:
         return 15
 
 
 class AfricanSwallow(BirdBase):
 
     @property
-    def airspeed(self):
+    def airspeed(self) -> float:
         return 10
 
 
 class BlueParrot(BirdBase):
 
     @property
-    def airspeed(self):
+    def airspeed(self) -> float:
         return 20
 
 

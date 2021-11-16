@@ -48,5 +48,6 @@ if __name__ == "__main__":
     people = [Person(24, 200), Person(50, 1000), Person(10, 0)]
     y, ts = youngest_and_total_salary(people)
     print(f"Youngest: {y}. Total Salary: {ts}")
+
     print(
         f"Youngest: {youngest(people)}. Total Salary: {total_salary(people)}")

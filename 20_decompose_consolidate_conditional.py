@@ -30,7 +30,7 @@ class Date:
         # TODO: Add a validator method during init to check if date is valid
 
 
-def charge(date: Date):
+def charge(date: Date) -> float:
     charge = 0
     # Some Code
     # ..
@@ -70,7 +70,7 @@ class Date2:
             (self.month == Month.SEP and self.day < 15)
 
 
-def charge2(date: Date2):
+def charge2(date: Date2) -> float:
     charge = 0
     # Some Code
     # ..
@@ -84,5 +84,6 @@ def charge2(date: Date2):
 if __name__ == "__main__":
     print(f"Charge: {charge(Date(Month.JUN, 14, 2020))}")
     print(f"Charge: {charge(Date(Month.JUL, 30, 2020))}")
+    
     print(f"Charge: {charge2(Date2(Month.JUN, 14, 2020))}")
     print(f"Charge: {charge2(Date2(Month.JUL, 30, 2020))}")

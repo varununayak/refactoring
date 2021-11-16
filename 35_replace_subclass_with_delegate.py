@@ -18,12 +18,12 @@ class Booking:
         self._show = show
         self._date = date
 
-    def is_peak_day(self):
+    def is_peak_day(self) -> bool:
         # Omit peak day logic here for brevity
         return True
 
     @property
-    def base_price(self):
+    def base_price(self) -> float:
         return self._show.price * 1.15 if self._is_peak_day else self._show.price
 
 
@@ -34,10 +34,10 @@ class PremiumBooking(Booking):
         self._extras = extras
 
     @property
-    def base_price(self):
+    def base_price(self) -> float:
         return self._show.price + self._extras.premium_fee
 
-    def has_dinner(self):
+    def has_dinner(self) -> bool:
         return self._extras.dinner and not self._is_peak_day()
 
 
@@ -72,18 +72,18 @@ class Booking_:
         else:
             self._premium_delegate = None
 
-    def is_peak_day(self):
+    def is_peak_day(self) -> bool:
         # Omit peak day logic here for brevity
         return True
 
     @property
-    def base_price(self):
+    def base_price(self) -> float:
         if self._premium_delegate:
             return self._premium_delegate.base_price
         else:
             return self._show.price * 1.15 if self._is_peak_day else self._show.price
 
-    def has_dinner(self):
+    def has_dinner(self) -> bool:
         if self._premium_delegate is None:
             raise NotImplementedError
         return self._premium_delegate.has_dinner() and not self._is_peak_day()
@@ -96,15 +96,16 @@ class PremiumBookingDelegate():
         self._extras = extras
 
     @property
-    def base_price(self):
+    def base_price(self) -> float:
         return self._show.price + self._extras.premium_fee
 
-    def has_dinner(self):
+    def has_dinner(self) -> bool:
         return self._extras.dinner
 
 
 if __name__ == "__main__":
     pb = PremiumBooking(Show(price=100), "01/20/2020", Extras())
     print(f"Premium Booking base price: {pb.base_price}")
+
     pb = Booking_(Show(price=100), "01/20/2020", Extras())
     print(f"Premium Booking base price: {pb.base_price}")

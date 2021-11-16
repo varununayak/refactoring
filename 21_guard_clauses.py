@@ -33,7 +33,8 @@ The intention of the code must come through in the style, so
 it is better to check for the unusual cases early on in the
 function and return if true. If we nest the unusual cases,
 the primary purpose (if these unusual cases are not true)
-get hidden in the nesting.
+get hidden in the nesting. These unusual case checks are 
+called guard clauses.
 """
 
 
@@ -49,4 +50,5 @@ def pay_amount_refactored(employee: Employee) -> float:
 if __name__ == "__main__":
     employee = Employee(retired=True)
     print(f"Pay Amount: {pay_amount(employee)}")
+
     print(f"Pay Amount: {pay_amount_refactored(employee)}")
