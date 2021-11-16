@@ -3,7 +3,7 @@
 from enum import IntEnum
 
 
-def count_high_priority():
+def count_high_priority() -> int:
     orders = ['low', 'high', 'normal', 'rush',
               'low', 'normal', 'normal', 'high']
     high_priority_count = len(
@@ -31,14 +31,14 @@ class Order:
     def __init__(self, priority: Priority) -> None:
         self.priority = priority
 
-    def high_priority_order(self):
+    def high_priority_order(self) -> bool:
         return self.priority > Priority.NORMAL
 
     def __repr__(self) -> str:
         return self.priority.name
 
 
-def count_high_priority_refactored():
+def count_high_priority_refactored() -> int:
     orders = [Order(Priority.LOW), Order(Priority.HIGH), Order(Priority.NORMAL), Order(Priority.RUSH), Order(
         Priority.LOW), Order(Priority.NORMAL), Order(Priority.NORMAL), Order(Priority.HIGH)]
     high_priority_count = len(
@@ -46,7 +46,7 @@ def count_high_priority_refactored():
     return high_priority_count
 
 
-def count_high_priority_refactored_2():
+def count_high_priority_refactored_2() -> int:
     orders = [Order(Priority.LOW), Order(Priority.HIGH), Order(Priority.NORMAL), Order(Priority.RUSH), Order(
         Priority.LOW), Order(Priority.NORMAL), Order(Priority.NORMAL), Order(Priority.HIGH)]
     high_priority_count = len(

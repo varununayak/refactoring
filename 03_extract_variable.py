@@ -2,9 +2,9 @@
 
 class Order:
 
-    def __init__(self) -> None:
-        self.quantity = 3
-        self.item_price = 30
+    def __init__(self, quantity: int, item_price: float) -> None:
+        self.quantity = quantity
+        self.item_price = item_price
 
 
 def price(order: Order):
@@ -36,9 +36,9 @@ away ugly details within the object.
 
 class OrderImproved:
 
-    def __init__(self) -> None:
-        self.quantity = 3
-        self.item_price = 30
+    def __init__(self, quantity: int, item_price: float) -> None:
+        self.quantity = quantity
+        self.item_price = item_price
 
     def base_price(self):
         return self.quantity * self.item_price
@@ -51,8 +51,8 @@ class OrderImproved:
 
 
 if __name__ == "__main__":
-    print(f"Price: {price(Order())}")
-    print(f"Price: {price_refactored(Order())}")
-    order = OrderImproved()
+    print(f"Price: {price(Order(quantity=3, item_price=30))}")
+    print(f"Price: {price_refactored(Order(quantity=3, item_price=30))}")
+    order = OrderImproved(quantity=3, item_price=30)
     print(
         f"Price: {order.base_price() - order.discount_based_on_quantity() + order.shipping()}")

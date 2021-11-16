@@ -2,8 +2,8 @@
 
 class Driver:
 
-    def __init__(self) -> None:
-        self.num_late_deliveries = 4
+    def __init__(self, num_late_deliveries: int) -> None:
+        self.num_late_deliveries = num_late_deliveries
 
 
 def rating(driver: Driver) -> int:
@@ -32,5 +32,6 @@ def rating_refactored(driver: Driver) -> int:
 
 
 if __name__ == "__main__":
-    print(f"Rating: {rating(Driver())}")
-    print(f"Rating: {rating_refactored(Driver())}")
+    late_driver = Driver(num_late_deliveries=4)
+    print(f"Rating: {rating(late_driver)}")
+    print(f"Rating: {rating_refactored(late_driver)}")

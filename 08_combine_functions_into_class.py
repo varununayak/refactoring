@@ -34,17 +34,17 @@ class OrderBetter:
         self.tax_threshold = tax_threshold
 
     @property
-    def base_price(self):
+    def base_price(self) -> float:
         """ Calculated on demand """
         return self.item_price * self.quantity
 
     @property
-    def taxable_charge(self):
+    def taxable_charge(self) -> float:
         """ Calculated on demand """
         return max(0, self.base_price - self.tax_threshold)
 
     @property
-    def tax(self):
+    def tax(self) -> float:
         """ Calculated on demand """
         return self.taxable_charge * self.tax_percentage / 100
 

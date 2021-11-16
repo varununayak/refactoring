@@ -50,7 +50,7 @@ def calculate_price_data(product: Product, quantity: int) -> PriceData:
     return PriceData(base_price, quantity, discount)
 
 
-def apply_shipping(price_data: PriceData, shipping_method: ShippingMethod):
+def apply_shipping(price_data: PriceData, shipping_method: ShippingMethod) -> float:
     shipping_per_case = shipping_method.discounted_fee if price_data.base_price > shipping_method.discount_threshold else shipping_method.fee_per_case
     shipping_cost = price_data.quantity * shipping_per_case
     return price_data.base_price - price_data.discount + shipping_cost
