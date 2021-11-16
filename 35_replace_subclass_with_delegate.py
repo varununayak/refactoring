@@ -55,7 +55,9 @@ Another issue with inheritance is that it introduces a very close relationship
 between parent and child. Changes to either class can easily break the other.
 Delegation reduces the coupling between classes.
 
-There is a saying that goes "Favor object composition over inheritance".
+There is a saying that goes "Favor object composition over inheritance", however, it is 
+better to observe "Favor a judicious mixture of composition and inheritance over
+either alone".
 
 """
 
