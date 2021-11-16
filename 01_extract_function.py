@@ -5,7 +5,7 @@ Function to print how much a customer owes based on an invoice
 """
 
 from datetime import datetime
-
+from typing import List
 
 class Order:
     def __init__(self, amount: float) -> None:
@@ -13,10 +13,10 @@ class Order:
 
 
 class Invoice:
-    def __init__(self) -> None:
-        self.orders = [Order(10), Order(20)]
-        self.due_date = None
-        self.customer = "Varun"
+    def __init__(self, orders: List[Order], customer: str, due_date=None) -> None:
+        self.orders = orders
+        self.customer = customer
+        self.due_date = due_date
 
 
 def print_owing(invoice: Invoice):
@@ -76,6 +76,5 @@ def print_owing_refactored(invoice: Invoice):
 
 
 if __name__ == "__main__":
-    print_owing(Invoice())
-    print("\n---------------------------- \n")
-    print_owing_refactored(Invoice())
+    print_owing(Invoice(orders=[Order(10), Order(20)], customer="Varun"))
+    print_owing_refactored(Invoice(orders=[Order(10), Order(20)], customer="Varun"))
