@@ -1,7 +1,7 @@
 # Extract Function
 
 """
-Function to pring how much a customer owes based on an invoice
+Function to print how much a customer owes based on an invoice
 """
 
 from datetime import datetime
@@ -38,8 +38,6 @@ def print_owing(invoice: Invoice):
 
 
 """
-NOTES:
-
 Optimizing compilers often work better with shorter functions that can be cached more easily.
 Small functions work only if the names are good.
 Name a function by its intent, not by what it actually does. There is no pressure to come up with the best name right away.
